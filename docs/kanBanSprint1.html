@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Kanban - Conduite de Projet</title>
+</head>
+
+<body>
+  <h1>KanBan - Sprint 1</h1>
+  <h2>Rappel des User Story</h2>
+<p>US1 : En tant que visiteur je souhaite m’inscrire afin de pouvoir m’authentifier.<br>
+US2: En tant que visiteur je souhaite pouvoir m’authentifier afin d’acceder aux différents services<br>
+US3 : En tant qu’utilisateur je souhaite pouvoir accéder à la liste des projets afin de pouvoir consulter leur avancement.<br>
+US4: En tant qu’utilisateur je souhaite pouvoir créer un projet afin de pouvoir mettre en place une gestion de projet.<br>
+US5: En tant que propriétaire de projet , je souhaite pouvoir ajouter/modifer/supprimer des membres à mon projet afin de pouvoir partager les informations du projet.<br>
+US6: En tant que propriétaire de projet, je souhaite pouvoir ajouter des US au backlog afin de définir les différents tâches à faire<br>
+US7: En tant que membre de projet, je souhaite pouvoir accéder aux différents sprints afin de pouvoir consulter les tâches à réaliser<br>
+US8: En tant que membre du projet, je souhaite voir la courbe de vélocité, afin de suivre l’avancement du projet<br>
+US9: En tant que membre du projet, je souhaite pouvoir ajouter des tâches dans le sprint (Kanban) afin de décomposer les users story en sous tâche<br>
+US10: En tant qu’utilisateur, je souhaite pouvoir mettre à jour mes informations (ex mot de passe, email …) afin de corriger les éventuelles erreurs<br>
+US11:  En tant que membre du projet, je souhaite pouvoir accéder à la matrice de traçabilité et mettre à jour les numéros de commits lorsque je finis une tâche afin de pouvoir voir l’historicité des commits de fin d’US<br>
+US12: En tant qu’utilisateur de projet, je souhaite pouvoir déposer mes fichiers de test E2E afin de pouvoir tester la US une fois le projet terminé.<br>
+US13: En tant que propriétaire du projet je souhaite pouvoir modifier les informations de mon projet afin de corriger d’éventuelles erreurs .<br>
+US14: En tant que propriétaire du projet je souhaite pouvoir ajouter des dépendances entre les tâches afin de pouvoir ordonner la réalisation des tâches.<br>
+US15: En tant que propriétaire du projet je souhaite pouvoir ordonner la réalisation des tâches afin d’optimiser le nombre de jh.<br>
+US16: En tant que membre du projet je souhaite avoir un résumé du projet afin de voir les informations du projet<br>
+US17: En tant qu’utilisateur je souhaite avoir un résumé des différents projet publics afin de voir la description des projets.<br>
+US18: En tant que membre du projet je souhaite pouvoir accéder aux informations du backlog afin de voir les différentes US.<br>
+US19: En tant que membre du projet, je souhaite modifier le développeur d’une tâche qui m’est affectée afin de déléguer mon travail à un autre membre du projet.</p>
+
+<h2>User Story du Sprint 1</h2>
+<p>US1 : En tant que visiteur je souhaite m’inscrire afin de pouvoir m’authentifier.<br>
+US2: En tant que visiteur je souhaite pouvoir m’authentifier afin d’acceder aux différents services<br>
+US3 : En tant qu’utilisateur je souhaite pouvoir accéder à la liste des projets afin de pouvoir consulter leur avancement.<br>
+US4: En tant qu’utilisateur je souhaite pouvoir créer un projet afin de pouvoir mettre en place une gestion de projet.<br>
+US10: En tant qu’utilisateur, je souhaite pouvoir mettre à jour mes informations (ex mot de passe, email …) afin de corriger les éventuelles erreurs</p>
+  
+  <table BORDER>
+    <tr>  <td><th>TODO</th><th>DOING</th><th>TEST</th><th>DONE</th></td>
+    </tr>
+
+
+    <tr>  <th ROWSPAN=4>US#1</th>
+      <td></td>  <td></td> <td></td><td>T1: Vue : Formulaire d'inscription</td>
+    </tr>
+      <tr> <td></td> <td></td> <td></td><td>T2: MODEL: Insertion de l'utilisateur dans la base de données</td> </tr>
+      <tr><td></td> <td></td> <td></td> <td>T3: CONTROLLEUR: Récupérer les informations de la vue et les envoyer au modèle</td></tr>
+      <tr><td></td> <td></td> <td></td><td>T4: TEST E2E</td>  </tr>
+
+    <tr>  <th ROWSPAN=4>US#2</th>
+      <td></td><td></td> <td></td><td>T5: Vue : Création du formulaire de connexion</td> 
+    </tr>
+    <tr> <td></td> <td></td> <td></td><td>T6: MODEL: Vérification de l'identifiant et mot de passe </td>  </tr>
+    <tr> <td><td></td> <td></td> <td></td><td>T7: Controlleur: Récupération des informations, envoi au model et créer les variable de sessions.</td>  </tr>
+    <tr> <td></td> <td></td> <td></td><td>T8: TEST E2E</td>  </tr>
+
+    <tr>  <th ROWSPAN=4>US#3</th>
+      <td>T9: VUE: Création d'un tableau listant tous les projets</td> <td></td> <td></td> <td></td>
+    </tr>
+    <tr> <td>T10: MODEL: Récupération de la liste des projets</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T11: Envoi du resultat du modèle à la vue</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T12: TEST E2E</td> <td></td> <td></td> <td></td> </tr>
+
+    <tr>  <th ROWSPAN=4>US#4</th>
+      <td>T13: VUE: Création d'un formulaire permettant de creer un nouveau projet</td> <td></td> <td></td> <td></td>
+    </tr>
+    <tr> <td>T14: MODELS : Requête insertion d'un projet</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T15: CONTROLLEUR : Controle des informations saisie et envoi au modèle</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T16: E2E</td> <td></td> <td></td> <td></td> </tr>
+
+    <tr>  <th ROWSPAN=4>US#10</th>
+      <td>T17: VUE : Création d'un formulaire contenant les informations de l'utilisateur et permettant de mettre à jour</td> <td></td> <td></td> <td></td>
+    </tr>
+    <tr> <td>T18: MODELS:  Récupérer les informations de l'utilisateur et pouvoir mettre à jour les données</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T19: Controlleur: Récupération des infos de l'utilisateur , lors d'un envoi de mise à jour via le formulaire => envoi au model</td> <td></td> <td></td> <td></td> </tr>
+    <tr> <td>T20: E2E</td> <td></td> <td></td> <td></td> </tr>
+
+
+
+
+    <tr>  <th ROWSPAN=3>Autres tâches</th>
+      <td></td> <td> </td> <td></td> <td>T21: Créer la base de données</td>
+    </tr>
+    <tr> <td></td> <td></td> <td></td> <td>T22: Créer le template</td> </tr>
+    <tr> <td></td> <td></td> <td></td> <td>T23: Créer l'architecture</td></tr>
+
+
+  </table>
+</body>
+</html>
