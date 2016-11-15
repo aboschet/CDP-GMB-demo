@@ -15,6 +15,10 @@
     <!-- Bootstrap core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo BASE_URL.'assets/css/style.css';?>" type="text/css" />
+    <link href="<?php echo BASE_URL.'assets/css/style.min.css';?>" rel="stylesheet" type="text/css" />
+	<link href="<?php echo BASE_URL.'assets/font-awesome/css/font-awesome.css';?>" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo BASE_URL.'assets/css/style_default.css' ;?>" rel="stylesheet" id="style_color" type="text/css" />
+	<link href="<?php echo BASE_URL.'assets/uniform/css/uniform.default.css' ;?>" rel="stylesheet" type="text/css" />
     <?php foreach($css as $fileCss) { ?>
       <link rel="stylesheet" href="<?= $fileCss; ?>" type="text/css" />
     <?php } ?>

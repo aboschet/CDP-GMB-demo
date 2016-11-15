@@ -10,7 +10,7 @@ use system\App;
 
 App::load();
 
-
+include(APP_PATH.'Helpers/Global.php');
 
 $global_action = isset($_GET['p']) ? explode('/', $_GET['p']) : null;
 $controller_path = '';
@@ -27,7 +27,7 @@ $controller = '\\app\\Controllers'.str_replace('/', '\\', $controller_path).'Con
 $action = isset($global_action[$i_controller_path]) && !(empty($global_action[$i_controller_path])) ? $global_action[$i_controller_path] : App::getConfig('default_function');
 
 $numberParams = count($global_action)-$i_controller_path-1;
-$params = ($numberParams === 0) ? null : array_slice($global_action, -$numberParams);
+$params = (is_null($global_action) || $numberParams === 0) ? null : array_slice($global_action, -$numberParams);
 
 //Delete the last empty params
 if(!is_null($params) && empty($params[$numberParams-1])) {

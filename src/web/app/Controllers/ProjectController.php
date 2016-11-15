@@ -9,7 +9,7 @@ class ProjectController extends AppController{
     public function __construct(){
         parent::__construct();
         if(!$this->data['isLogged']) {
-          $this->redirect(dirname($_SERVER['PHP_SELF']).'/Home');
+          $this->redirect(BASE_URL.'Home');
         }
         $this->loadModel('Projects');
     }
@@ -47,11 +47,14 @@ class ProjectController extends AppController{
     }
     
     public function info($id) {
-      $this->data['message'] = 'Not Implemented Yet';
+      $project = $this->Projects->getInfoProject($id);
+      if(!$project || !$this->Projects->haveAccess($id, $this->data['auth'])) {
+        redirect(BASE_URL.'projects/all');
+      }
+      $this->data['projectInfo'] = $project[0];
       $this->render('project/info', $this->data);
     }
     public function all() {
-      
       $this->data['projects'] = $this->Projects->listProjects($this->data['userInfo']->id);
       $this->data['css'][] = 'https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css';
       $this->data['js'] =  array(
