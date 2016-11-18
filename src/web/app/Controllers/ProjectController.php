@@ -12,6 +12,7 @@ class ProjectController extends AppController{
           $this->redirect(BASE_URL.'Home');
         }
         $this->loadModel('Projects');
+        $this->loadModel('Membersproject');
     }
     public function index(){
        $this->notFound();
@@ -46,15 +47,44 @@ class ProjectController extends AppController{
       $this->render('project/create', $this->data);
     }
     
-    public function info($id) {
+    public function info($id, $action = null) {
       $project = $this->Projects->getInfoProject($id);
-      if(!$project || !$this->Projects->haveAccess($id, $this->data['auth'])) {
-        redirect(BASE_URL.'projects/all');
+      if(!$project || !$this->Projects->haveAccess($id, $_SESSION['auth'])) {
+        $this->redirect(BASE_URL.'Project/all');
       }
+      
+      $_SESSION['project_id'] = $id;
+      
+      if(!is_null($action)) {
+       
+        if($this->Projects->isOwner($id)) {
+          if($action == 'addMember' && isset($_POST['idDeveloppeur'])) {
+            $this->Membersproject->insert(array('idProjet' => $id, 'idDeveloppeur' => $_POST['idDeveloppeur']));
+            $this->data['message'] = 'Ajout du membre effectué avec succès';
+          }
+          else if($action == 'removeMember' && isset($_POST['idDeveloppeur'])) {
+            $this->Membersproject->delete(array('idProjet' => $id, 'idDeveloppeur' => $_POST['idDeveloppeur']));
+            $this->data['message'] = 'Suppression du membre effectuée avec succès';
+          }
+        }
+      }
+      
+      $this->data['isOwner'] = $this->Projects->isOwner($id);
+      $this->data['showMemberTab'] = !is_null($action);
+      $this->data['membersNotInProject'] = $this->Membersproject->getMembersIsNotInTheProject($id);
+      $this->data['membersProject'] = $this->Membersproject->getMembers($id);
+      
       $this->data['projectInfo'] = $project[0];
       $this->render('project/info', $this->data);
     }
+    
+    public function parameters() {
+      $this->render('project/parameters', $this->data);
+    }
+    
+    
     public function all() {
+      unset($_SESSION['project_id']);
       $this->data['projects'] = $this->Projects->listProjects($this->data['userInfo']->id);
       $this->data['css'][] = 'https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css';
       $this->data['js'] =  array(

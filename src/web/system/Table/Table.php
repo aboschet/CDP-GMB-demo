@@ -39,8 +39,15 @@ class Table
         return $this->query("UPDATE {$this->table} SET $sql_part WHERE id = ?", $attributes, true);
     }
 
-    public function delete($id){
-        return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
+    public function delete($fields, $type = ' AND '){
+        $sql_parts = [];
+        $attributes = [];
+        foreach($fields as $k => $v){
+            $sql_parts[] = "$k = ?";
+            $attributes[] = $v;
+        }
+        $sql_part = implode($type, $sql_parts);
+        return $this->query("DELETE FROM {$this->table} WHERE ".$sql_part, $attributes, true);
     }
 
     public function insert($fields){

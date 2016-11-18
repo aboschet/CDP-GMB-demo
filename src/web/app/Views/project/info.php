@@ -1,14 +1,29 @@
+  <?php if(isset($error)) : ?>
+  <div class="col-md-12 alert alert-danger">
+    <?php 
+    foreach($error as $value) {
+        echo "<p>".$value."</p>";
+     }?>
+  </div>
+ <?php endif; ?>
+ <?php if(isset($message)) : ?>
+  <div class="col-md-12 alert alert-success">
+    <?= $message; ?>
+  </div>
+ <?php endif; ?>
+ 
+ 
  <div>
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#project" aria-controls="project" role="tab" data-toggle="tab">Projet</a></li>
-    <li role="presentation"><a href="#members" aria-controls="members" role="tab" data-toggle="tab">Membres</a></li>
+    <li role="presentation" <?php if(!$showMemberTab) { echo 'class="active"'; }?>><a href="#project" aria-controls="project" role="tab" data-toggle="tab">Projet</a></li>
+    <li role="presentation" <?php if($showMemberTab) { echo 'class="active"'; }?>><a href="#members" aria-controls="members" role="tab" data-toggle="tab">Membres</a></li>
     <li role="presentation"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Détails</a></li>
   </ul>
       <br /><br />
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="project">
+    <div role="tabpanel" class="tab-pane <?php if(!$showMemberTab) { echo 'active'; }?>" id="project">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-2">
@@ -56,7 +71,7 @@
         </div>
       </div>
     </div>
-    <div role="tabpanel" class="tab-pane" id="members">
+    <div role="tabpanel" class="tab-pane <?php if($showMemberTab) { echo 'active'; }?>" id="members">
       <?php include(APP_PATH.'Views/project/members.php'); ?>
     </div>
     <div role="tabpanel" class="tab-pane" id="details">
@@ -84,8 +99,3 @@
 
 </div>
  
- <?php if(isset($message)) : ?>
-  <div class="col-md-12 alert alert-success">
-    <?= $message; ?>
-  </div>
- <?php endif; ?>

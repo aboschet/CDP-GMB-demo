@@ -9,7 +9,7 @@ clear: both;
 }
 .widget-title h4
 {
-color: #E41B17;
+color: #2fade7;
 }
 a, a:hover {
     text-shadow: none !important;
@@ -99,7 +99,7 @@ padding: 25px;
 }
 .btn:hover
 {
-background-color: #E41B17;
+background-color: #2fade7;
 }
 /* Landscape phone to portrait tablet */
 @media (max-width:979px) {

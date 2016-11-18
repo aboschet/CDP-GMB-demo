@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    
 
     <title><?= App::getInstance()->title; ?></title>
 
@@ -36,11 +36,13 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <?php if($isLogged): ?>
-              <li class=""><a href="#">Résumé</a></li>
-              <li class=""><a href="#">Backlog</a></li>
-              <li class=""><a href="#">Sprints</a></li>
-              <li class=""><a href="#">Traçabilité</a></li>
-              <li class=""><a href="#">Paramètres</a></li>
+              <?php if(isset($_SESSION['project_id'])) : ?>
+                <li class=""><a href="<?= BASE_URL.'Project/info/'.$_SESSION['project_id']; ?>">Résumé</a></li>
+                <li class=""><a href="<?= BASE_URL.'UserStory'; ?>">Backlog</a></li>
+                <li class=""><a href="<?= BASE_URL.'Sprint/info'; ?>">Sprints</a></li>
+                <li class=""><a href="<?= BASE_URL.'UserStory/traceability'; ?>">Traçabilité</a></li>
+                <li class=""><a href="<?= BASE_URL.'Project/parameters'; ?>">Paramètres</a></li>
+              <?php endif;?>
             <?php else: ?>
               <li><a>Connecte toi pour accéder à l'interface</a></li>
             <?php endif; ?>
