@@ -1,2 +1,2 @@
-# CDP-GMB-demo
+# CDP-GMB-dev
 Conduite de projet

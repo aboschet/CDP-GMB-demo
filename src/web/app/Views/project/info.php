@@ -19,6 +19,7 @@
     <li role="presentation" <?php if(!$showMemberTab) { echo 'class="active"'; }?>><a href="#project" aria-controls="project" role="tab" data-toggle="tab">Projet</a></li>
     <li role="presentation" <?php if($showMemberTab) { echo 'class="active"'; }?>><a href="#members" aria-controls="members" role="tab" data-toggle="tab">Membres</a></li>
     <li role="presentation"><a href="#details" aria-controls="details" role="tab" data-toggle="tab">Détails</a></li>
+    <li role="presentation"><a href="#velocite" aria-controls="velocite" role="tab" data-toggle="tab">Velocité</a></li>
   </ul>
       <br /><br />
   <!-- Tab panes -->
@@ -95,6 +96,11 @@
         
       </div>
     </div>
+    
+    <div role="tabpanel" class="tab-pane" id="velocite">
+      <?php include(APP_PATH.'Views/project/velocite.php'); ?>
+    </div>
+    
   </div>
 
 </div>

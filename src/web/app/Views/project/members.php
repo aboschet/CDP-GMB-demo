@@ -10,7 +10,9 @@
             }
             ?>
         </select>
-        <button class="btn btn-success">Ajouter</button>
+        
+            <button class="btn btn-primary">Ajouter</button>
+        
       <?php }
        ?>
     </div>

@@ -4,7 +4,12 @@ define('APP_PATH', ROOT_PATH.'/app/');
 define('SYSTEM_PATH', ROOT_PATH.'/system/');
 define('VIEWS_PATH', ROOT_PATH.'Views/');
 define('MODELS_PATH', ROOT_PATH.'Models/');
-define('BASE_URL', 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/');
+$BASE_URL = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+if(substr($BASE_URL, -1) != '/') {
+  $BASE_URL.='/';
+}
+define('BASE_URL', $BASE_URL);
+
 require SYSTEM_PATH . 'App.php';
 use system\App;
 

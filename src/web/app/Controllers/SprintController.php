@@ -16,10 +16,12 @@ class SprintController extends AppController{
           $this->redirect(BASE_URL.'Project/all');
         }
         $this->loadModel('Projects');    
+        $this->loadModel('UserStories');    
         $this->loadModel('Sprints');    
         
     }
     public function index(){
+        
        $this->notFound();
     }
     
@@ -28,7 +30,17 @@ class SprintController extends AppController{
       if(!$this->Projects->isOwner($id)) {
         $this->redirect(BASE_URL.'Sprint/info');
       }
+      
+      $this->loadModel('UserStories');    
+      $this->UserStories->update(array('idSprint' => $idSprint), array('idSprint' => NULL, 'etat' => 0));
+      
+      $this->loadModel('Tasks');
+      $this->Tasks->delete(array('idSprint' => $idSprint));
+      
       $this->Sprints->delete(array('id' => $idSprint));
+      
+      $this->loadModel('Velocite');
+      $this->Velocite->delete(array('idProjet' => $id, 'idSprint' => $idSprint));      
       $_SESSION["message"] = "Le sprint a bien été supprimé";
       $this->redirect(BASE_URL.'Sprint/info');
     }
@@ -59,8 +71,13 @@ class SprintController extends AppController{
               'dateDebut' => date('Y-m-d', strtotime($_POST['dateDebut'])),
               'dateFin' => date('Y-m-d', strtotime($_POST['dateFin']))
             );
+            
+            
             $_SESSION["message"] = "Le sprint a bien été ajouté";
-            $this->Sprints->insert($postData);
+            $idSprint = $this->Sprints->insert($postData);
+            $this->loadModel('Velocite');
+            //$veloAttendu = $this->Velocite->getInfoAdd($id);
+            $this->Velocite->insert(array('idProjet' => $id, 'idSprint' => $idSprint, 'effortAttendu' => 0 /*$veloAttendu*/ ));       
           }
         }
         else {

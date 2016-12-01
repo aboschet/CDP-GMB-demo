@@ -40,6 +40,7 @@
                 <li class=""><a href="<?= BASE_URL.'Project/info/'.$_SESSION['project_id']; ?>">Résumé</a></li>
                 <li class=""><a href="<?= BASE_URL.'UserStory'; ?>">Backlog</a></li>
                 <li class=""><a href="<?= BASE_URL.'Sprint/info'; ?>">Sprints</a></li>
+                <li class=""><a href="<?= BASE_URL.'Project/tests'; ?>">Test E2E</a></li>
                 <li class=""><a href="<?= BASE_URL.'UserStory/traceability'; ?>">Traçabilité</a></li>
                 <li class=""><a href="<?= BASE_URL.'Project/parameters'; ?>">Paramètres</a></li>
               <?php endif;?>
@@ -51,6 +52,7 @@
           <?php if (!$isLogged): ?>
             <li class="active"><a href="<?= BASE_URL; ?>">Connexion / Inscription</a></li>
           <?php else :?>
+            <li class="active"><a href="<?= BASE_URL.'User/profil'; ?>">Profil</a></li>
             <li class="active"><a href="<?= BASE_URL.'Home/disconnect'; ?>">Déconnexion</a></li>
           <?php endif;?>
           </ul>

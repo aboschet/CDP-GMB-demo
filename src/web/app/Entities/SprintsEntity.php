@@ -14,6 +14,6 @@ class SprintsEntity extends Entity{
   }
   
   public function getKanban() {
-    return "<a href=".BASE_URL.'Sprint/kanban/'.$this->id.">Kanban</a>";
+    return "<a href=".BASE_URL.'Kanban/info/'.$this->id.">Kanban</a>";
   }
 }

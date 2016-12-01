@@ -30,6 +30,7 @@
         <thead>
           <th>Numero</th>
           <th>Nom</th>
+          <th>Description</th>
           <th>Etat</th>
           <th>Chiffrage</th>
           <th>Priorite</th>
@@ -43,6 +44,7 @@
           <tr>
             <td>User Story <?= $i; ?></td>
             <td><?= $userstory->nom; ?></td>
+            <td><?= $userstory->description; ?></td>
             <td><?= $userstory->etat; ?></td>
             <td><?= $userstory->chiffrage; ?></td>
             <td><?= $userstory->priorite; ?></td>
@@ -66,15 +68,25 @@
       <form action="<?= BASE_URL.'UserStory/create'; ?>" method="POST" class="form-horizontal">
       <div class="modal-body">
 	  
-		<div class="col-md-12">
+
+    <div class="col-md-12">
 			<div class="form-group">
-				<label for="nom" class="control-label col-sm-2" style ="font-size : 85%">Nom</label>
+				<label for="nom" class="control-label col-sm-2" style ="font-size : 85%" >Nom</label>
 				<div class="col-sm-10">
-					<textarea class="form-control" class="col-sm-10" id="nom" name="nom" placeholder="En temps que ... je souhaite ... afin de ..."> <?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?></textarea>
+					<input class="form-control" id="chiffrage" name="nom" value="<?php if(isset($_POST['nom'])) { echo $_POST['nom']; } ?>">
+				</div>
+			</div>
+		</div>
+    
+    <div class="col-md-12">
+			<div class="form-group">
+				<label for="description" class="control-label col-sm-2" style ="font-size : 85%">Description</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" class="col-sm-10" id="description" name="description" > <?php if(isset($_POST['nom'])) { echo $_POST['nom']; } else { echo "En temps que ... je souhaite ... afin de ..."; }  ?></textarea>
                 </div>
 			</div>
 		</div>
-				
+  
 		
 		<div class="col-md-12">
 			<div class="form-group">

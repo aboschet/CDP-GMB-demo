@@ -27,16 +27,22 @@ class Table
         return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
 
-    public function update($id, $fields){
+    public function update($where, $fields, $type = 'AND'){
         $sql_parts = [];
         $attributes = [];
         foreach($fields as $k => $v){
             $sql_parts[] = "$k = ?";
             $attributes[] = $v;
         }
-        $attributes[] = $id;
         $sql_part = implode(', ', $sql_parts);
-        return $this->query("UPDATE {$this->table} SET $sql_part WHERE id = ?", $attributes, true);
+        
+        $where_parts = [];
+        foreach($where as $k => $v){
+            $where_parts[] = "$k = ?";
+            $attributes[] = $v;
+        }        
+        $where_parts = implode($type, $where_parts);
+        return $this->query("UPDATE {$this->table} SET $sql_part WHERE $where_parts", $attributes, true);
     }
 
     public function delete($fields, $type = ' AND '){

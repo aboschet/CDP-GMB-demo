@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Kanban - Conduite de Projet</title>
+</head>
+
+<body>
+  <h1>KanBan - Sprint 3</h1>
+  <h2>Rappel des User Story</h2>
+<p>US1 : En tant que visiteur je souhaite m’inscrire afin de pouvoir m’authentifier.<br>
+US2: En tant que visiteur je souhaite pouvoir m’authentifier afin d’acceder aux différents services<br>
+US3 : En tant qu’utilisateur je souhaite pouvoir accéder à la liste des projets afin de pouvoir consulter leur avancement.<br>
+US4: En tant qu’utilisateur je souhaite pouvoir créer un projet afin de pouvoir mettre en place une gestion de projet.<br>
+US5: En tant que propriétaire de projet , je souhaite pouvoir ajouter/modifer/supprimer des membres à mon projet afin de pouvoir partager les informations du projet.<br>
+US6: En tant que propriétaire de projet, je souhaite pouvoir ajouter des US au backlog afin de définir les différents tâches à faire<br>
+US7: En tant que membre de projet, je souhaite pouvoir accéder aux différents sprints afin de pouvoir consulter les tâches à réaliser<br>
+US8: En tant que membre du projet, je souhaite voir la courbe de vélocité, afin de suivre l’avancement du projet<br>
+US9: En tant que membre du projet, je souhaite pouvoir ajouter des tâches dans le sprint (Kanban) afin de décomposer les users story en sous tâche<br>
+US10: En tant qu’utilisateur, je souhaite pouvoir mettre à jour mes informations (ex mot de passe, email …) afin de corriger les éventuelles erreurs<br>
+US11:  En tant que membre du projet, je souhaite pouvoir accéder à la matrice de traçabilité et mettre à jour les numéros de commits lorsque je finis une tâche afin de pouvoir voir l’historicité des commits de fin d’US<br>
+US12: En tant qu’utilisateur de projet, je souhaite pouvoir déposer mes fichiers de test E2E afin de pouvoir tester la US une fois le projet terminé.<br>
+US13: En tant que propriétaire du projet je souhaite pouvoir modifier les informations de mon projet afin de corriger d’éventuelles erreurs .<br>
+US14: En tant que propriétaire du projet je souhaite pouvoir ajouter des dépendances entre les tâches afin de pouvoir ordonner la réalisation des tâches.<br>
+US15: En tant que propriétaire du projet je souhaite pouvoir ordonner la réalisation des tâches afin d’optimiser le nombre de jh.<br>
+US16: En tant que membre du projet je souhaite avoir un résumé du projet afin de voir les informations du projet<br>
+US17: En tant qu’utilisateur je souhaite avoir un résumé des différents projet publics afin de voir la description des projets.<br>
+US18: En tant que membre du projet je souhaite pouvoir accéder aux informations du backlog afin de voir les différentes US.<br>
+US19: En tant que membre du projet, je souhaite modifier le développeur d’une tâche qui m’est affectée afin de déléguer mon travail à un autre membre du projet.</p>
+
+<h2>User Story du Sprint 3</h2>
+<p>US7: En tant que membre de projet, je souhaite pouvoir accéder aux différents sprints afin de pouvoir consulter les tâches à réaliser<br>
+US9: En tant que membre du projet, je souhaite pouvoir ajouter des tâches dans le sprint (Kanban) afin de décomposer les users story en sous tâche<br>
+US12: En tant qu’utilisateur de projet, je souhaite pouvoir déposer mes fichiers de test E2E afin de pouvoir tester la US une fois le projet terminé.<br>
+US14: En tant que propriétaire du projet je souhaite pouvoir ajouter des dépendances entre les tâches afin de pouvoir ordonner la réalisation des tâches.<br>
+US15: En tant que propriétaire du projet je souhaite pouvoir ordonner la réalisation des tâches afin d’optimiser le nombre de jh.<br>
+US19: En tant que membre du projet, je souhaite modifier le développeur d’une tâche qui m’est affectée afin de déléguer mon travail à un autre membre du projet.<br>
+US17: En tant qu’utilisateur je souhaite avoir un résumé des différents projet publics afin de voir la description des projets.<br>
+US13: En tant que propriétaire du projet je souhaite pouvoir modifier les informations de mon projet afin de corriger d’éventuelles erreurs .<br>
+US10: En tant qu’utilisateur, je souhaite pouvoir mettre à jour mes informations (ex mot de passe, email …) afin de corriger les éventuelles erreurs<br>
+US8: En tant que membre du projet, je souhaite voir la courbe de vélocité, afin de suivre l’avancement du projet<br>
+US11:  En tant que membre du projet, je souhaite pouvoir accéder à la matrice de traçabilité et mettre à jour les numéros de commits lorsque je finis une tâche afin de pouvoir voir l’historicité des commits de fin d’US<br>
+
+ 
+  <table BORDER>
+    <tr>  
+		<td></td>
+		<th>TODO</th>
+		<th>DOING</th>
+		<th>TEST</th>
+		<th>DONE</th>
+    </tr>
+    
+    <tr>
+		<th rowspan=4>US7</th>
+    <td></td>
+    <td></td>
+    <td></td>
+		<td>T1 : VUE : Création de la vue affichant les tâches de chaque sprint</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+		<td>T2 : MODEL : Récupère les informations des tâches</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>T3 : CONTROLLER : Demande au model les informations des tâches et les renvoie à la vue</td>
+    </tr>
+    <tr>
+		<td>T4 : TEST E2E</td>
+		
+    <td></td>
+		<td></td>
+		<td></td>
+    </tr>
+    
+    <tr>
+		<th rowspan=4>US9</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>T5 : VUE : Cration du formulaire d'ajout d'une tâche</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+  		<td></td>
+      
+      <td>T6 : MODEL : Insertion de la tâche créé dans la bdd</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+  		<td></td>
+    	<td>T7 : CONTROLLER : Controle des informations saisies et envoie au model</td>
+		
+    </tr>
+    <tr>
+		
+		<td></td>
+		<td></td>
+		<td></td>
+    <td>T8 : TEST E2E</td>
+    </tr>
+    
+    <tr>
+		<th rowspan=4>US12</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>T9 : VUE : Création de la vue permettant l'upload d'un fichier</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    	<td>T10 : MODEL : Sauvegarde du fichier</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>T11 : CONTROLLER : Control du fichier et envoie du fichier au model</td>
+    </tr>
+    <tr>
+		<td>T12 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+    
+<tr>
+		<th rowspan=4>US14</th>
+    	<td>T13 : VUE : Création de du formulaire permettant de d'ajouter des tâche à réaliser avant une autre tâche</td>
+		<td></td>
+		<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>T14 : MODEL : Reqête de récupération de l'ensemble des tâches + reqêtes d'insertion des dépendances</td>
+		<td></td>
+		<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>T15 : CONTROLLER : Récupération des tâches auprès du model et envoie de celles ci à la vue + Envoie des dépendances au model</td>
+		<td></td>
+		<td></td>
+  		<td></td>
+    </tr>
+    <tr>
+		<td>T16 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+<tr>
+		<th rowspan=4>US15</th>
+    	<td>T17 : VUE : Création de la vue permettant d'afficher les listes des tâches ordonnées</td>
+		<td></td>
+		<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>T18 : MODEL : Récupération des tâches ordonnées</td>
+		<td></td>
+		<td></td>
+    	<td></td>
+    </tr>
+    <tr>
+    	<td>T19 : CONTROLLER : Récupération des tâches et envoie à la vue</td>
+		<td></td>
+		<td></td>
+  		<td></td>
+    </tr>
+    <tr>
+		<td>T20 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+<tr>
+		<th rowspan=4>US19</th>
+      <td></td>
+      <td></td>
+    	<td></td>
+      <td>T21 : VUE : Création d'une vue affichant la tâches et le développeur qui lui est affecté</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    	<td></td>
+      <td>T22 : MODEL : Modification du développeur de la tâche dans la bdd</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+  		<td></td>
+      <td>T23 : CONTROLLER : Récupération du nouveau développeur et envoie au model</td>
+      
+    </tr>
+    <tr>
+		<td>T24 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+    <tr>
+		<th rowspan=4>US17</th>
+    <td></td>
+		<td></td>
+    	<td></td>
+    	<td>T25 : VUE : Création de l'affichage listant tous les projets publics ainsi que leur description</td>
+		
+    </tr>
+    <tr>
+      <td></td>
+		<td></td>
+    	<td></td>
+    	<td>T26 : MODEL : Requêtes de récupération des projets publics et de leur description</td>
+    </tr>
+    <tr>
+      <td></td>
+		<td></td>
+    	<td></td>
+    	<td>T27 : CONTROLLER : Récupération des projets publics auprès du model et envoies de ceux ci à la vue</td>
+    </tr>
+    <tr>
+      <td></td>
+		<td></td>
+    	<td></td>
+		<td>T28 : TEST E2E</td>
+    </tr>
+
+
+<tr>
+		<th rowspan=4>US13</th>
+    	<td></td>
+		
+		<td></td>
+    	<td></td>
+      <td>T29 : VUE : Création de la vue listant l'ensemble des ionformations d'un projet et permettant la modification de ces champs</td>
+    </tr>
+    <tr>
+    	<td></td>
+		
+		<td></td>
+    	<td></td>
+      <td>T30 : MODEL : Récupération des informations d'un projet</td>
+    </tr>
+    <tr>
+    	<td></td>
+		
+		<td></td>
+  		<td></td>
+      <td>T31 : CONTROLLER : Control des informations récupérées et envoie au model</td>
+    </tr>
+    <tr>
+		<td>T32 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+    <tr>
+		<th rowspan=4>US10</th>
+      <td></td>
+      <td></td>
+  		<td></td>
+    	<td>T33 : VUE : Création de la vue listant l'ensemble des ionformations d'un utilisateur et permettant la modification de ces champs</td>
+    </tr>
+    <tr>
+      <td></td>
+  		<td></td>
+    	<td></td>
+      <td>T34 : MODEL : Récupération des informations d'un utilisateur</td>
+    </tr>
+    <tr>
+      <td></td>
+  		<td></td>
+    	<td></td>
+      <td>T35 : CONTROLLER : Control des informations récupérées et envoie au model</td>
+    </tr>
+    <tr>
+		<td>T36 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+    <tr>
+		<th rowspan=4>US8</th>
+      <td></td>
+      <td></td>
+    	<td></td>
+    	<td>T37 : VUE : Création de l'affichage de la courbe de vélocité</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    	<td></td>
+      <td>T38 : MODEL : Récupération des informations sur les sprints ainsi que sur les user story</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+  		<td></td>
+      <td>T39 : CONTROLLER : Traitement des informations retournées par le model + effectuer les calculs des données à renvoyer à la vue </td>
+    </tr>
+    <tr>
+		<td>T40 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+ <tr>
+		<th rowspan=4>US11</th>
+    	<td></td>
+  		<td></td>
+  		<td></td>
+    	<td>T41 : VUE : Affichage d'un tableau représentant la matrice de traçabilité et avoir la possibilité de modifier le numéro de commit</td>
+    </tr>
+    <tr>
+    	<td></td>
+		  <td></td>
+    	<td></td>
+      <td>T42 : MODEL : Récupération de l'ensemble des user story + Insertion du numéro de commit</td>
+    </tr>
+    <tr>
+    	<td></td>
+  		<td></td>
+  		<td></td>
+      <td>T43 : CONTROLLER : Control et envoie des informations au model</td>
+    </tr>
+    <tr>
+		<td>T44 : TEST E2E</td>
+		<td></td>
+		<td></td>
+		<td></td>
+    </tr>
+
+  </table>

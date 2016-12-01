@@ -8,5 +8,5 @@
 }
      
 table.dataTable tbody tr.bg-blue, tr.bg-blue {
-  background: lightblue;
+  background: lightblue !important;
 }

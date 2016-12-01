@@ -14,7 +14,6 @@ color: #2fade7;
 a, a:hover {
     text-shadow: none !important;
     color: #22878E;
-	padding: 25px
 }
 ul.faq-list li a:hover, ul.faq-list li a.active{
     background: #22C0CB;
